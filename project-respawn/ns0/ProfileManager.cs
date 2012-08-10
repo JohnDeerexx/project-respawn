@@ -109,11 +109,12 @@ namespace ns0
 			ProfileManager.Instance = this;
 			this.InitializeComponent();
 			this.Text = Guid.NewGuid().ToString().Replace("-", "");
-			this.InfoLabel.Text = "{0} (Keys: {1}) ".smethod_1("v1.1.0", int_1);
-			ProfileManager.maxClients = int_1;
+            this.InfoLabel.Text = "{0} (Keys: {1}) ".smethod_1("Project Respawn Alpha", int_1);
+            ProfileManager.maxClients = 100;
 			ProfileManager.string_0 = string_3;
-			ProfileManager.string_1 = "CA89013A047D5D70CC28FB872E543604";
+            ProfileManager.string_1 = ProfileManager.game_code;
 			ProfileManager.string_2 = string_5;
+            ProfileManager.game_code = "CA89013A047D5D70CC28FB872E543604";
 			this.Checkbox_AutoLogin.Checked = Settings.Default.TryAutoLogin;
 			string[] names = Enum.GetNames(typeof(Profile.RegionOverride));
 			for (int i = 0; i < names.Length; i++)
