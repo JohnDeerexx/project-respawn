@@ -136,7 +136,7 @@ namespace ns0
 			this.label3.Name = "label3";
 			this.label3.Size = new Size(594, 77);
 			this.label3.TabIndex = 1;
-			this.label3.Text = "Never leave the bot running unattended for a long time.\r\nNo refunds, no guarantee, use at your own risk.\r\nThis software might get your D3-Account banned.\r\nThis dialog will auto-close in 6 seconds.";
+			this.label3.Text = "When using this program you argree to the TOS on www.project-respawn.com/tos/\r\nThis dialog will auto-close in 6 seconds.";
 			this.label3.TextAlign = ContentAlignment.MiddleCenter;
 			this.linkLabel2.Anchor = AnchorStyles.Bottom;
 			this.linkLabel2.AutoSize = true;
@@ -147,7 +147,7 @@ namespace ns0
 			this.linkLabel2.Size = new Size(147, 20);
 			this.linkLabel2.TabIndex = 7;
 			this.linkLabel2.TabStop = true;
-			this.linkLabel2.Text = "www.hellbuddy.com";
+            this.linkLabel2.Text = "project-respawn.com";
 			this.linkLabel2.LinkClicked += new LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
 			this.linkLabel1.Anchor = AnchorStyles.Bottom;
 			this.linkLabel1.AutoSize = true;
@@ -158,7 +158,7 @@ namespace ns0
 			this.linkLabel1.Size = new Size(155, 20);
 			this.linkLabel1.TabIndex = 6;
 			this.linkLabel1.TabStop = true;
-			this.linkLabel1.Text = "forum.hellbuddy.com";
+			this.linkLabel1.Text = "project-respawn.com/forum/";
 			this.linkLabel1.LinkClicked += new LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
 			this.panel4.Anchor = AnchorStyles.Bottom;
 			this.panel4.BackColor = Color.White;

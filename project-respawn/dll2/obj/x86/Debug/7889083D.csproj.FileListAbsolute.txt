@@ -6,3 +6,11 @@ C:\Port\Reflector\Disassembler\Launcher\out\ilspy\dll2\bin\Debug\Newtonsoft.Json
 C:\Port\Reflector\Disassembler\Launcher\out\ilspy\dll2\bin\Debug\646CF190.pdb
 C:\Port\Reflector\Disassembler\Launcher\out\ilspy\dll2\obj\x86\Debug\7889083D.dll
 C:\Port\Reflector\Disassembler\Launcher\out\ilspy\dll2\obj\x86\Debug\7889083D.pdb
+C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\dll2\bin\Debug\7889083D.dll
+C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\dll2\bin\Debug\7889083D.pdb
+C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\dll2\bin\Debug\646CF190.dll
+C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\dll2\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\dll2\bin\Debug\646CF190.pdb
+C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\dll2\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\dll2\obj\x86\Debug\7889083D.dll
+C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\dll2\obj\x86\Debug\7889083D.pdb

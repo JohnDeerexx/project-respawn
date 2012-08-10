@@ -5,3 +5,10 @@ C:\Port\Reflector\Disassembler\Launcher\out\ilspy\bin\Debug\AdvancedDebugger.dll
 C:\Port\Reflector\Disassembler\Launcher\out\ilspy\bin\Debug\Newtonsoft.Json.dll
 C:\Port\Reflector\Disassembler\Launcher\out\ilspy\obj\x86\Debug\Launcher.exe
 C:\Port\Reflector\Disassembler\Launcher\out\ilspy\obj\x86\Debug\Launcher.pdb
+C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\obj\x86\Debug\Launcher.exe
+C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\obj\x86\Debug\Launcher.pdb
+C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\bin\Debug\Launcher.exe
+C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\bin\Debug\Launcher.pdb
+C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\bin\Debug\AdvancedDebugger.dll
+C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\obj\x86\Debug\ResolveAssemblyReference.cache
