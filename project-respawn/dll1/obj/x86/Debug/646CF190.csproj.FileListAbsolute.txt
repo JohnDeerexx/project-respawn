@@ -1,0 +1,5 @@
+C:\Port\Reflector\Disassembler\Launcher\out\ilspy\dll1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Port\Reflector\Disassembler\Launcher\out\ilspy\dll1\bin\Debug\646CF190.dll
+C:\Port\Reflector\Disassembler\Launcher\out\ilspy\dll1\bin\Debug\646CF190.pdb
+C:\Port\Reflector\Disassembler\Launcher\out\ilspy\dll1\obj\x86\Debug\646CF190.dll
+C:\Port\Reflector\Disassembler\Launcher\out\ilspy\dll1\obj\x86\Debug\646CF190.pdb

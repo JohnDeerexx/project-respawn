@@ -1,0 +1,8 @@
+C:\Port\Reflector\Disassembler\Launcher\out\ilspy\dll2\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Port\Reflector\Disassembler\Launcher\out\ilspy\dll2\bin\Debug\7889083D.dll
+C:\Port\Reflector\Disassembler\Launcher\out\ilspy\dll2\bin\Debug\7889083D.pdb
+C:\Port\Reflector\Disassembler\Launcher\out\ilspy\dll2\bin\Debug\646CF190.dll
+C:\Port\Reflector\Disassembler\Launcher\out\ilspy\dll2\bin\Debug\Newtonsoft.Json.dll
+C:\Port\Reflector\Disassembler\Launcher\out\ilspy\dll2\bin\Debug\646CF190.pdb
+C:\Port\Reflector\Disassembler\Launcher\out\ilspy\dll2\obj\x86\Debug\7889083D.dll
+C:\Port\Reflector\Disassembler\Launcher\out\ilspy\dll2\obj\x86\Debug\7889083D.pdb

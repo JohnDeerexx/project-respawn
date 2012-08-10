@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{602762E2-F791-4D03-99E5-605F9982E9B3}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>646CF190</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Core" />
+    <Reference Include="System" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="D3Core.Classes.Navigation\Cell.cs" />
+    <Compile Include="D3Core.Classes.Navigation\Navi.cs" />
+    <Compile Include="D3Core.Classes\D3Actor.cs" />
+    <Compile Include="D3Core.Classes\D3Spell.cs" />
+    <Compile Include="D3Core.Classes\HeroActor.cs" />
+    <Compile Include="D3Core.Classes\ItemArrayContainer.cs" />
+    <Compile Include="D3Core.Classes\LineSegment.cs" />
+    <Compile Include="D3Core.Classes\LoginHelper.cs" />
+    <Compile Include="D3Core.Classes\Movement.cs" />
+    <Compile Include="D3Core.Classes\NavCellContainer.cs" />
+    <Compile Include="D3Core.Classes\NavMesh.cs" />
+    <Compile Include="D3Core.Classes\NavZone.cs" />
+    <Compile Include="D3Core.Classes\Scene.cs" />
+    <Compile Include="D3Core.Classes\Vector2.cs" />
+    <Compile Include="D3Core.Classes\Vector3.cs" />
+    <Compile Include="D3Core\ActorsManager.cs" />
+    <Compile Include="D3Core\ActorType.cs" />
+    <Compile Include="D3Core\ContainerStruct.cs" />
+    <Compile Include="D3Core\D3Attribute.cs" />
+    <Compile Include="D3Core\D3AttributeType.cs" />
+    <Compile Include="D3Core\D3CharSelect.cs" />
+    <Compile Include="D3Core\D3Class.cs" />
+    <Compile Include="D3Core\D3Item.cs" />
+    <Compile Include="D3Core\D3ItemRarity.cs" />
+    <Compile Include="D3Core\D3Power.cs" />
+    <Compile Include="D3Core\D3Quest.cs" />
+    <Compile Include="D3Core\D3QuestStatus.cs" />
+    <Compile Include="D3Core\D3ResourceMask.cs" />
+    <Compile Include="D3Core\D3Team.cs" />
+    <Compile Include="D3Core\D3_IngameAct.cs" />
+    <Compile Include="D3Core\D3_QuestScreenAct.cs" />
+    <Compile Include="D3Core\Difficulty.cs" />
+    <Compile Include="D3Core\EventArgs.cs" />
+    <Compile Include="D3Core\Framework.cs" />
+    <Compile Include="D3Core\Helper.cs" />
+    <Compile Include="D3Core\Hook.cs" />
+    <Compile Include="D3Core\ItemLocationIndex.cs" />
+    <Compile Include="D3Core\ProtoBufferOPCodes.cs" />
+    <Compile Include="D3Core\SnoType.cs" />
+    <Compile Include="D3Core\UnitType.cs" />
+    <Compile Include="ns0\AssemblyInfoAttribute.cs" />
+    <Compile Include="ns0\Class0.cs" />
+    <Compile Include="ns0\Class1.cs" />
+    <Compile Include="ns0\Class15.cs" />
+    <Compile Include="ns0\Class16.cs" />
+    <Compile Include="ns0\Class3.cs" />
+    <Compile Include="ns0\Class30.cs" />
+    <Compile Include="ns0\Class31.cs" />
+    <Compile Include="ns0\Class33.cs" />
+    <Compile Include="ns0\Class34.cs" />
+    <Compile Include="ns0\Class37.cs" />
+    <Compile Include="ns0\Struct11.cs" />
+    <Compile Include="ns0\Struct5.cs" />
+    <Compile Include="ns0\Struct6.cs" />
+    <Compile Include="ns0\Struct7.cs" />
+    <Compile Include="ns0\Struct8.cs" />
+    <Compile Include="ns0\Struct9.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

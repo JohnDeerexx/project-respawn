@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{FF32E6EE-187B-42B9-91C8-A133ED7BCD20}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>7889083D</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HellBuddy.Core\CoreStatePriority.cs" />
+    <Compile Include="HellBuddy.Scripting\BeginTransition.cs" />
+    <Compile Include="HellBuddy.Scripting\CancelCutscene.cs" />
+    <Compile Include="HellBuddy.Scripting\DeathSavePoint.cs" />
+    <Compile Include="HellBuddy.Scripting\DispatchEventScript.cs" />
+    <Compile Include="HellBuddy.Scripting\Find.cs" />
+    <Compile Include="HellBuddy.Scripting\ForceTownState.cs" />
+    <Compile Include="HellBuddy.Scripting\Interact.cs" />
+    <Compile Include="HellBuddy.Scripting\LoadNextScript.cs" />
+    <Compile Include="HellBuddy.Scripting\LogoutAndStartNewQuest.cs" />
+    <Compile Include="HellBuddy.Scripting\Move.cs" />
+    <Compile Include="HellBuddy.Scripting\OverrideAggroRange.cs" />
+    <Compile Include="HellBuddy.Scripting\RelativeMove.cs" />
+    <Compile Include="HellBuddy.Scripting\Script.cs" />
+    <Compile Include="HellBuddy.Scripting\ScriptActionBase.cs" />
+    <Compile Include="HellBuddy.Scripting\ScriptComment.cs" />
+    <Compile Include="HellBuddy.Scripting\SetFocusTarget.cs" />
+    <Compile Include="HellBuddy.Scripting\TownPortal.cs" />
+    <Compile Include="HellBuddy.Scripting\TransitionAwait.cs" />
+    <Compile Include="HellBuddy.Scripting\UseTeleporter.cs" />
+    <Compile Include="HellBuddy.Scripting\Wait.cs" />
+    <Compile Include="HellBuddy\ContainerA.cs" />
+    <Compile Include="ns1\ActorListViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns1\AssemblyInfoAttribute.cs" />
+    <Compile Include="ns1\AttributeViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns1\Class100.cs" />
+    <Compile Include="ns1\Class102.cs" />
+    <Compile Include="ns1\Class104.cs" />
+    <Compile Include="ns1\Class111.cs" />
+    <Compile Include="ns1\Class113.cs" />
+    <Compile Include="ns1\Class115.cs" />
+    <Compile Include="ns1\Class117.cs" />
+    <Compile Include="ns1\Class119.cs" />
+    <Compile Include="ns1\Class122.cs" />
+    <Compile Include="ns1\Class132.cs" />
+    <Compile Include="ns1\Class137.cs" />
+    <Compile Include="ns1\Class138.cs" />
+    <Compile Include="ns1\Class139.cs" />
+    <Compile Include="ns1\Class140.cs" />
+    <Compile Include="ns1\Class146.cs" />
+    <Compile Include="ns1\Class147.cs" />
+    <Compile Include="ns1\Class148.cs" />
+    <Compile Include="ns1\Class149.cs" />
+    <Compile Include="ns1\Class150.cs" />
+    <Compile Include="ns1\Class151.cs" />
+    <Compile Include="ns1\Class153.cs" />
+    <Compile Include="ns1\Class154.cs" />
+    <Compile Include="ns1\Class155.cs" />
+    <Compile Include="ns1\Class156.cs" />
+    <Compile Include="ns1\Class157.cs" />
+    <Compile Include="ns1\Class38.cs" />
+    <Compile Include="ns1\Class39.cs" />
+    <Compile Include="ns1\Class40.cs" />
+    <Compile Include="ns1\Class41.cs" />
+    <Compile Include="ns1\Class42.cs" />
+    <Compile Include="ns1\Class43.cs" />
+    <Compile Include="ns1\Class44.cs" />
+    <Compile Include="ns1\Class45.cs" />
+    <Compile Include="ns1\Class46.cs" />
+    <Compile Include="ns1\Class47.cs" />
+    <Compile Include="ns1\Class48.cs" />
+    <Compile Include="ns1\Class49.cs" />
+    <Compile Include="ns1\Class50.cs" />
+    <Compile Include="ns1\Class51.cs" />
+    <Compile Include="ns1\Class52.cs" />
+    <Compile Include="ns1\Class53.cs" />
+    <Compile Include="ns1\Class54.cs" />
+    <Compile Include="ns1\Class55.cs" />
+    <Compile Include="ns1\Class57.cs" />
+    <Compile Include="ns1\Class58.cs" />
+    <Compile Include="ns1\Class60.cs" />
+    <Compile Include="ns1\Class61.cs" />
+    <Compile Include="ns1\Class64.cs" />
+    <Compile Include="ns1\Class71.cs" />
+    <Compile Include="ns1\Class82.cs" />
+    <Compile Include="ns1\Class83.cs" />
+    <Compile Include="ns1\Class90.cs" />
+    <Compile Include="ns1\Class91.cs" />
+    <Compile Include="ns1\Class92.cs" />
+    <Compile Include="ns1\Class93.cs" />
+    <Compile Include="ns1\Class94.cs" />
+    <Compile Include="ns1\Class95.cs" />
+    <Compile Include="ns1\Class96.cs" />
+    <Compile Include="ns1\Class97.cs" />
+    <Compile Include="ns1\CurrentSpells.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns1\DebugMessages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns1\GClass0.cs" />
+    <Compile Include="ns1\GClass1.cs" />
+    <Compile Include="ns1\GClass3.cs" />
+    <Compile Include="ns1\GClass4.cs" />
+    <Compile Include="ns1\InjectedWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns1\Interface0.cs" />
+    <Compile Include="ns1\Interface1.cs" />
+    <Compile Include="ns1\ItemFactors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns1\OverrideAggroRangeQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns1\ScriptEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns1\SelectEventScript.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns1\SelectTargetActor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns1\SelectTargetScene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns1\StringQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ns1\ActorListViewer.resources" />
+    <EmbeddedResource Include="ns1\AttributeViewer.resources" />
+    <EmbeddedResource Include="ns1\Class139.resources" />
+    <EmbeddedResource Include="ns1\CurrentSpells.resources" />
+    <EmbeddedResource Include="ns1\DebugMessages.resources" />
+    <EmbeddedResource Include="ns1\InjectedWindow.resources" />
+    <EmbeddedResource Include="ns1\ItemFactors.resources" />
+    <EmbeddedResource Include="ns1\OverrideAggroRangeQuery.resources" />
+    <EmbeddedResource Include="ns1\ScriptEditor.resources" />
+    <EmbeddedResource Include="ns1\SelectEventScript.resources" />
+    <EmbeddedResource Include="ns1\SelectTargetActor.resources" />
+    <EmbeddedResource Include="ns1\SelectTargetScene.resources" />
+    <EmbeddedResource Include="ns1\StringQuery.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dll1\646CF190.csproj">
+      <Project>{602762E2-F791-4D03-99E5-605F9982E9B3}</Project>
+      <Name>646CF190</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
