@@ -24,7 +24,7 @@ namespace ns1
 		private bool bool_0;
 		[CompilerGenerated]
 		private string string_4;
-		[CompilerGenerated]
+        [CompilerGenerated]
 		private int int_0;
 		[CompilerGenerated]
 		private bool bool_1;

@@ -112,7 +112,7 @@ namespace ns0
 			this.InfoLabel.Text = "{0} (Keys: {1}) ".smethod_1("v1.1.0", int_1);
 			ProfileManager.maxClients = int_1;
 			ProfileManager.string_0 = string_3;
-			ProfileManager.string_1 = string_4;
+			ProfileManager.string_1 = "CA89013A047D5D70CC28FB872E543604";
 			ProfileManager.string_2 = string_5;
 			this.Checkbox_AutoLogin.Checked = Settings.Default.TryAutoLogin;
 			string[] names = Enum.GetNames(typeof(Profile.RegionOverride));
@@ -543,7 +543,7 @@ namespace ns0
 			base.MaximizeBox = false;
 			base.Name = "ProfileManager";
 			base.StartPosition = FormStartPosition.Manual;
-			this.Text = "HellBuddy Bot - Profile Manager";
+			this.Text = "Project: Respawn Bot - Profile Manager";
 			base.FormClosing += new FormClosingEventHandler(this.ProfileManager_FormClosing);
 			base.Load += new EventHandler(this.ProfileManager_Load);
 			base.Shown += new EventHandler(this.ProfileManager_Shown);

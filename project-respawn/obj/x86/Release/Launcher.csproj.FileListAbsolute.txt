@@ -1,0 +1,7 @@
+C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\bin\Release\Launcher.exe
+C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\bin\Release\Launcher.pdb
+C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\bin\Release\AdvancedDebugger.dll
+C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\bin\Release\Newtonsoft.Json.dll
+C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\obj\x86\Release\Launcher.exe
+C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\obj\x86\Release\Launcher.pdb

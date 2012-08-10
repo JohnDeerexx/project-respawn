@@ -27,11 +27,11 @@ namespace ns0
 		}
 		private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
-			Process.Start("http://forum.hellbuddy.com");
+			Process.Start("http://project-respawn/forum/.com");
 		}
 		private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
-			Process.Start("http://hellbuddy.com");
+            Process.Start("http://project-respawn/");
 		}
 		private void timer_0_Tick(object sender, EventArgs e)
 		{

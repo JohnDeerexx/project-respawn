@@ -126,7 +126,7 @@ namespace ns0
 		{
 			this.InitializeComponent();
 			Label expr_28 = this.LabelVersion;
-			expr_28.Text += "v1.1.0";
+			expr_28.Text += "Alpha 0.0.1";
 			int width = TextRenderer.MeasureText("v1.1.0", this.LabelVersion.Font).Width;
 			this.LabelVersion.Location = new Point(this.LabelVersion.Location.X - width, this.LabelVersion.Location.Y);
 			Class4.smethod_0();
@@ -430,7 +430,8 @@ namespace ns0
 									LoginWindow.string_9 = array;
 									if (action3 == null)
 									{
-										action3 = new Action(this.method_12);
+										
+                                       action3 = new Action(this.method_12);
 									}
 									base.Invoke(action3);
 								}

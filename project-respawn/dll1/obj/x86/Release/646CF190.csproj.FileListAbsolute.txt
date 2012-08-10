@@ -1,0 +1,5 @@
+C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\dll1\bin\Release\646CF190.dll
+C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\dll1\bin\Release\646CF190.pdb
+C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\dll1\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\dll1\obj\x86\Release\646CF190.dll
+C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\dll1\obj\x86\Release\646CF190.pdb
