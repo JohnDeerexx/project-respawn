@@ -12,3 +12,15 @@ C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\bin\Debug\
 C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\bin\Debug\AdvancedDebugger.dll
 C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\obj\x86\Debug\ResolveAssemblyReference.cache
+e:\prog\C\LC\obj\x86\Debug\Launcher.exe
+e:\prog\C\LC\obj\x86\Debug\ResolveAssemblyReference.cache
+e:\prog\C\LC\obj\x86\Debug\ns0.LoginWindow.resources
+e:\prog\C\LC\obj\x86\Debug\GenerateResource.read.1.tlog
+e:\prog\C\LC\obj\x86\Debug\GenerateResource.write.1.tlog
+e:\prog\C\LC\bin\Debug\Launcher.exe
+e:\prog\C\LC\bin\Debug\Launcher.pdb
+e:\prog\C\LC\obj\x86\Debug\Launcher.pdb
+e:\prog\C\LC\bin\Debug\AdvancedDebugger.dll
+e:\prog\C\LC\bin\Debug\Newtonsoft.Json.dll
+e:\prog\C\LC\obj\x86\Debug\ns0.NewVersion.resources
+e:\prog\C\LC\obj\x86\Debug\ns0.Properties.Resources.resources

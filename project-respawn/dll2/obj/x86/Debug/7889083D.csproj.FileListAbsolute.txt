@@ -14,3 +14,11 @@ C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\dll2\bin\D
 C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\dll2\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\dll2\obj\x86\Debug\7889083D.dll
 C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\dll2\obj\x86\Debug\7889083D.pdb
+e:\prog\C\LC\dll2\bin\Debug\7889083D.dll
+e:\prog\C\LC\dll2\bin\Debug\7889083D.pdb
+e:\prog\C\LC\dll2\bin\Debug\646CF190.dll
+e:\prog\C\LC\dll2\bin\Debug\Newtonsoft.Json.dll
+e:\prog\C\LC\dll2\bin\Debug\646CF190.pdb
+e:\prog\C\LC\dll2\obj\x86\Debug\ResolveAssemblyReference.cache
+e:\prog\C\LC\dll2\obj\x86\Debug\7889083D.dll
+e:\prog\C\LC\dll2\obj\x86\Debug\7889083D.pdb

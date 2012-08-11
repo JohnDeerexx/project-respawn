@@ -8,3 +8,8 @@ C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\dll1\bin\D
 C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\dll1\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\dll1\obj\x86\Debug\646CF190.dll
 C:\Users\Christoffer\Documents\GitHub\project-respawn\project-respawn\dll1\obj\x86\Debug\646CF190.pdb
+e:\prog\C\LC\dll1\bin\Debug\646CF190.dll
+e:\prog\C\LC\dll1\bin\Debug\646CF190.pdb
+e:\prog\C\LC\dll1\obj\x86\Debug\ResolveAssemblyReference.cache
+e:\prog\C\LC\dll1\obj\x86\Debug\646CF190.dll
+e:\prog\C\LC\dll1\obj\x86\Debug\646CF190.pdb

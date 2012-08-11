@@ -112,7 +112,7 @@ namespace ns0
             this.InfoLabel.Text = "{0} (Keys: {1}) ".smethod_1("Project Respawn Alpha", int_1);
             ProfileManager.maxClients = 100;
 			ProfileManager.string_0 = string_3;
-            ProfileManager.string_1 = CA89013A047D5D70CC28FB872E543604; // This needs to be updated to new newest game version code. //
+            ProfileManager.string_1 = "CA89013A047D5D70CC28FB872E543604"; // This needs to be updated to new newest game version code. //
 			ProfileManager.string_2 = string_5;
 			this.Checkbox_AutoLogin.Checked = Settings.Default.TryAutoLogin;
 			string[] names = Enum.GetNames(typeof(Profile.RegionOverride));
@@ -527,7 +527,7 @@ namespace ns0
 			this.ComboBox_RegionOverride.SelectedIndexChanged += new EventHandler(this.ComboBox_RegionOverride_SelectedIndexChanged);
 			base.AutoScaleDimensions = new SizeF(6f, 13f);
 //			base.AutoScaleMode = AutoScaleMode.Font;
-			this.BackgroundImage = Class9.gradient_dim;
+		//	this.BackgroundImage = Class9.gradient_dim;
 			this.BackgroundImageLayout = ImageLayout.Stretch;
 			base.ClientSize = new Size(419, 502);
 			base.Controls.Add(this.BtnRenameProfile);
@@ -538,7 +538,7 @@ namespace ns0
 			base.Controls.Add(this.tabControl1);
 			base.Controls.Add(this.NewProfileBtn);
 //			base.FormBorderStyle = FormBorderStyle.FixedSingle;
-			base.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+		//	base.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
 			base.Location = new Point(20, 100);
 			base.MaximizeBox = false;
 			base.Name = "ProfileManager";
@@ -747,44 +747,48 @@ namespace ns0
 		}
 		private void StartStopBtn_Click(object sender, EventArgs e)
 		{
-			Profile profile = this.ProfileListBox.SelectedItem as Profile;
-			if (profile == null)
-			{
-				return;
-			}
-			if (profile.AutoLogin && (profile.AccountName.Length < 4 || profile.Password.Length < 4))
-			{
-				MessageBox.Show("Battle.NET Account-Email / Password invalid!\n\nBoth must be longer than 4 characters!", "Error starting profile", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-				return;
-			}
-			if (!profile.ProfileActive)
-			{
-				if (!File.Exists(profile.D3Executable))
-				{
-					MessageBox.Show("The games executable could not be found.", "Cannot start game", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-					return;
-				}
-				string text = Class7.smethod_0(profile.D3Executable);
-				if (text != ProfileManager.string_1)
-				{
-					MessageBox.Show(string.Concat(new string[]
-					{
-						"This version of the game is not supported.\r\nIf you think you got this message by mistake, then visit our forums.\r\n\r\nThe bot supports this version: ",
-						ProfileManager.string_1,
-						"\r\nYour game has this version: ",
-						text,
-						"\r\n\r\nIf the bot is out of date we will publish an update soon. If the game is out of date you should update it now. But be aware that Europe/Asia receive the updates at later times than users in North America"
-					}), "MD5 Mismatch", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-					return;
-				}
-			}
-			profile.SaveToFile();
-			profile.ProfileActive = !profile.ProfileActive;
-			this.timer_0_Tick(null, null);
-			this.method_2();
-			this.method_1();
-			this.timer_0_Tick(null, null);
-		}
+        //    MessageBox.Show("Currently not available,sorry.","Sorry",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            
+            Profile profile = this.ProfileListBox.SelectedItem as Profile;
+            if (profile == null)
+            {
+                return;
+            }
+            if (profile.AutoLogin && (profile.AccountName.Length < 4 || profile.Password.Length < 4))
+            {
+                MessageBox.Show("Battle.NET Account-Email / Password invalid!\n\nBoth must be longer than 4 characters!", "Error starting profile", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (!profile.ProfileActive)
+            {
+                if (!File.Exists(profile.D3Executable))
+                {
+                    MessageBox.Show("The games executable could not be found.", "Cannot start game", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                string text = Class7.smethod_0(profile.D3Executable);
+                if (text != ProfileManager.string_1)
+                {
+                    MessageBox.Show(string.Concat(new string[]
+                    {
+                        "This version of the game is not supported.\r\nIf you think you got this message by mistake, then visit our forums.\r\n\r\nThe bot supports this version: ",
+                        ProfileManager.string_1,
+                        "\r\nYour game has this version: ",
+                        text,
+                        "\r\n\r\nIf the bot is out of date we will publish an update soon. If the game is out of date you should update it now. But be aware that Europe/Asia receive the updates at later times than users in North America"
+                    }), "MD5 Mismatch", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+            }
+            profile.SaveToFile();
+            profile.ProfileActive = !profile.ProfileActive;
+            this.timer_0_Tick(null, null);
+            this.method_2();
+            this.method_1();
+            this.timer_0_Tick(null, null);
+          
+        }
+            
 		private void DeleteProfileBtn_Click(object sender, EventArgs e)
 		{
 			Profile profile = this.ProfileListBox.SelectedItem as Profile;

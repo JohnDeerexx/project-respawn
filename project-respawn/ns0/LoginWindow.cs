@@ -105,8 +105,7 @@ namespace ns0
 		private TextBox LicenceKeyBox;
 		private Button submitBtn;
 		private Label label1;
-		private GroupBox groupBox1;
-		private Label statusLabel;
+        private GroupBox groupBox1;
 		private Label LabelVersion;
 		private Button BtnExtendLicenceBox;
 		private Thread thread_0;
@@ -120,6 +119,8 @@ namespace ns0
 		internal static string[] string_9;
 		internal static string string_10 = Path.Combine(Path.GetTempPath(), "HellBuddy\\");
 		private List<LoginWindow.Class0> list_0;
+        private Label statusLabel;
+        private PictureBox pictureBox1;
 		[CompilerGenerated]
 		private static Func<string, bool> func_0;
 		public LoginWindow()
@@ -147,106 +148,145 @@ namespace ns0
 		}
 		private void InitializeComponent()
 		{
-			ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(LoginWindow));
-			this.LicenceKeyBox = new TextBox();
-			this.submitBtn = new Button();
-			this.label1 = new Label();
-			this.groupBox1 = new GroupBox();
-			this.BtnExtendLicenceBox = new Button();
-			this.statusLabel = new Label();
-			this.LabelVersion = new Label();
-			this.groupBox1.SuspendLayout();
-			base.SuspendLayout();
-			this.LicenceKeyBox.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
-			this.LicenceKeyBox.Font = new Font("Consolas", 9.75f, FontStyle.Regular, GraphicsUnit.Point, 0);
-			this.LicenceKeyBox.Location = new Point(9, 41);
-			this.LicenceKeyBox.Name = "LicenceKeyBox";
-			this.LicenceKeyBox.Size = new Size(237, 23);
-			this.LicenceKeyBox.TabIndex = 0;
-			this.LicenceKeyBox.Enter += new EventHandler(this.LicenceKeyBox_Enter);
-			this.submitBtn.Anchor = (AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
-			this.submitBtn.Location = new Point(9, 71);
-			this.submitBtn.Name = "submitBtn";
-			this.submitBtn.Size = new Size(266, 26);
-			this.submitBtn.TabIndex = 2;
-			this.submitBtn.Text = "Login";
-			this.submitBtn.UseVisualStyleBackColor = true;
-			this.submitBtn.Click += new EventHandler(this.submitBtn_Click);
-			this.label1.AutoSize = true;
-			this.label1.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-			this.label1.Location = new Point(9, 21);
-			this.label1.Name = "label1";
-			this.label1.Size = new Size(69, 13);
-			this.label1.TabIndex = 3;
-			this.label1.Text = "Licence Key:";
-			this.groupBox1.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
-			this.groupBox1.BackColor = Color.Transparent;
-			this.groupBox1.Controls.Add(this.BtnExtendLicenceBox);
-			this.groupBox1.Controls.Add(this.statusLabel);
-			this.groupBox1.Controls.Add(this.LicenceKeyBox);
-			this.groupBox1.Controls.Add(this.label1);
-			this.groupBox1.Controls.Add(this.submitBtn);
-			this.groupBox1.Location = new Point(12, 12);
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Padding = new Padding(6, 8, 6, 6);
-			this.groupBox1.Size = new Size(284, 152);
-			this.groupBox1.TabIndex = 0;
-			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "Login";
-			this.BtnExtendLicenceBox.Anchor = (AnchorStyles.Top | AnchorStyles.Right);
-			this.BtnExtendLicenceBox.FlatStyle = FlatStyle.System;
-			this.BtnExtendLicenceBox.Location = new Point(249, 40);
-			this.BtnExtendLicenceBox.Name = "BtnExtendLicenceBox";
-			this.BtnExtendLicenceBox.Size = new Size(26, 25);
-			this.BtnExtendLicenceBox.TabIndex = 6;
-			this.BtnExtendLicenceBox.Text = "+";
-			this.BtnExtendLicenceBox.UseVisualStyleBackColor = true;
-			this.BtnExtendLicenceBox.Click += new EventHandler(this.BtnExtendLicenceBox_Click);
-			this.statusLabel.Anchor = (AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
-			this.statusLabel.BackColor = Color.WhiteSmoke;
-			this.statusLabel.Location = new Point(9, 104);
-			this.statusLabel.Name = "statusLabel";
-			this.statusLabel.Padding = new Padding(2);
-			this.statusLabel.Size = new Size(266, 42);
-			this.statusLabel.TabIndex = 5;
-			this.statusLabel.Text = "Ready";
-			this.statusLabel.TextAlign = ContentAlignment.MiddleCenter;
-			this.LabelVersion.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right);
-			this.LabelVersion.AutoSize = true;
-			this.LabelVersion.BackColor = Color.Transparent;
-			this.LabelVersion.Font = new Font("Microsoft Sans Serif", 6.75f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			this.LabelVersion.ForeColor = SystemColors.ControlDark;
-			this.LabelVersion.Location = new Point(245, 170);
-			this.LabelVersion.Name = "LabelVersion";
-			this.LabelVersion.Size = new Size(51, 12);
-			this.LabelVersion.TabIndex = 4;
-			this.LabelVersion.Text = "Version: ";
-			this.LabelVersion.MouseUp += new MouseEventHandler(this.LabelVersion_MouseUp);
-			base.AutoScaleDimensions = new SizeF(6f, 13f);
-			//base.AutoScaleMode = AutoScaleMode.Font;
-			//this.BackgroundImage = Class9.gradient_dim;
-			this.BackgroundImageLayout = ImageLayout.Stretch;
-			base.ClientSize = new Size(308, 189);
-			base.Controls.Add(this.LabelVersion);
-			base.Controls.Add(this.groupBox1);
-			//base.FormBorderStyle = FormBorderStyle.FixedSingle;
-			//base.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
-			base.MaximizeBox = false;
-			base.MinimizeBox = false;
-			base.Name = "LoginWindow";
-			base.StartPosition = FormStartPosition.CenterScreen;
-			this.Text = "Launcher";
-			base.Load += new EventHandler(this.LoginWindow_Load);
-			base.Shown += new EventHandler(this.LoginWindow_Shown);
-			this.groupBox1.ResumeLayout(false);
-			this.groupBox1.PerformLayout();
-			base.ResumeLayout(false);
-			base.PerformLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginWindow));
+            this.LicenceKeyBox = new System.Windows.Forms.TextBox();
+            this.submitBtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BtnExtendLicenceBox = new System.Windows.Forms.Button();
+            this.statusLabel = new System.Windows.Forms.Label();
+            this.LabelVersion = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // LicenceKeyBox
+            // 
+            this.LicenceKeyBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.LicenceKeyBox.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LicenceKeyBox.Location = new System.Drawing.Point(9, 41);
+            this.LicenceKeyBox.Name = "LicenceKeyBox";
+            this.LicenceKeyBox.Size = new System.Drawing.Size(233, 23);
+            this.LicenceKeyBox.TabIndex = 0;
+            this.LicenceKeyBox.Enter += new System.EventHandler(this.LicenceKeyBox_Enter);
+            // 
+            // submitBtn
+            // 
+            this.submitBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.submitBtn.Location = new System.Drawing.Point(21, 105);
+            this.submitBtn.Name = "submitBtn";
+            this.submitBtn.Size = new System.Drawing.Size(262, 26);
+            this.submitBtn.TabIndex = 2;
+            this.submitBtn.Text = "Login";
+            this.submitBtn.UseVisualStyleBackColor = true;
+            this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(9, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Licence Key:";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.BtnExtendLicenceBox);
+            this.groupBox1.Controls.Add(this.statusLabel);
+            this.groupBox1.Controls.Add(this.LicenceKeyBox);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(350, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 8, 6, 6);
+            this.groupBox1.Size = new System.Drawing.Size(280, 125);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Login";
+            // 
+            // BtnExtendLicenceBox
+            // 
+            this.BtnExtendLicenceBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnExtendLicenceBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.BtnExtendLicenceBox.Location = new System.Drawing.Point(245, 40);
+            this.BtnExtendLicenceBox.Name = "BtnExtendLicenceBox";
+            this.BtnExtendLicenceBox.Size = new System.Drawing.Size(26, 25);
+            this.BtnExtendLicenceBox.TabIndex = 6;
+            this.BtnExtendLicenceBox.Text = "+";
+            this.BtnExtendLicenceBox.UseVisualStyleBackColor = true;
+            this.BtnExtendLicenceBox.Click += new System.EventHandler(this.BtnExtendLicenceBox_Click);
+            // 
+            // statusLabel
+            // 
+            this.statusLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.statusLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.statusLabel.Location = new System.Drawing.Point(9, 77);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Padding = new System.Windows.Forms.Padding(2);
+            this.statusLabel.Size = new System.Drawing.Size(262, 42);
+            this.statusLabel.TabIndex = 5;
+            this.statusLabel.Text = "Ready";
+            this.statusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LabelVersion
+            // 
+            this.LabelVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelVersion.AutoSize = true;
+            this.LabelVersion.BackColor = System.Drawing.Color.Transparent;
+            this.LabelVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelVersion.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.LabelVersion.Location = new System.Drawing.Point(223, 141);
+            this.LabelVersion.Name = "LabelVersion";
+            this.LabelVersion.Size = new System.Drawing.Size(51, 12);
+            this.LabelVersion.TabIndex = 4;
+            this.LabelVersion.Text = "Version: ";
+            this.LabelVersion.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LabelVersion_MouseUp);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-7, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(317, 96);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // LoginWindow
+            // 
+            this.BackColor = System.Drawing.Color.DarkRed;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(304, 162);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.LabelVersion);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.submitBtn);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "LoginWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Launcher";
+            this.Load += new System.EventHandler(this.LoginWindow_Load);
+            this.Shown += new System.EventHandler(this.LoginWindow_Shown);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
 		}
 		private void submitBtn_Click(object sender, EventArgs e)
 		{
-			if (this.LicenceKeyBox.Text.Length > 2 && this.LicenceKeyBox.Text.Length <= 2000)
-			{
+			
 				this.method_4(true);
 				this.statusLabel.Text = "Connecting...";
 				if (this.tcpClient_0 != null)
@@ -259,7 +299,7 @@ namespace ns0
 				this.thread_0.IsBackground = true;
 				this.thread_0.Start();
 				return;
-			}
+			
 		}
 		private void method_0()
 		{
