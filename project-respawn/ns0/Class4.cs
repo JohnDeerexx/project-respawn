@@ -13,7 +13,7 @@ namespace ns0
 	{
 		private const int int_0 = 0;
 		private const int int_1 = 10;
-		private static string string_0;
+		private static string sharedSettingsPath;
 		private static Random random_0 = new Random(Environment.TickCount);
 		internal static string string_1 = "";
 		private static bool bool_0 = false;
@@ -30,13 +30,13 @@ namespace ns0
 				{
 					Directory.CreateDirectory(text);
 				}
-				Class4.string_0 = Path.Combine(text, "SharedSettings.txt");
-				if (!File.Exists(Class4.string_0))
+				Class4.sharedSettingsPath = Path.Combine(text, "SharedSettings.txt");
+				if (!File.Exists(Class4.sharedSettingsPath))
 				{
-					FileStream fileStream = File.Create(Class4.string_0);
+					FileStream fileStream = File.Create(Class4.sharedSettingsPath);
 					fileStream.Close();
 				}
-				File.SetAttributes(Class4.string_0, FileAttributes.Hidden);
+				File.SetAttributes(Class4.sharedSettingsPath, FileAttributes.Hidden);
 				Class4.bool_0 = true;
 			}
 			catch
@@ -45,13 +45,13 @@ namespace ns0
 			}
 		}
 		[MethodImpl(MethodImplOptions.Synchronized)]
-		internal static void smethod_1(string string_2, string string_3)
+		internal static void saveSettingFile(string parameter, string parameterValue)
 		{
 			if (!Class4.bool_0)
 			{
 				throw new Exception("Settings must be initialized before usage!");
 			}
-			if (!File.Exists(Class4.string_0))
+			if (!File.Exists(Class4.sharedSettingsPath))
 			{
 				MessageBox.Show("Error: Settings file has been deleted!", "HellBuddy Bot", MessageBoxButtons.OK, MessageBoxIcon.Hand);
 				Process.GetCurrentProcess().Kill();
@@ -62,7 +62,7 @@ namespace ns0
 				fileStream = null;
 				try
 				{
-					fileStream = File.Open(Class4.string_0, FileMode.Open, FileAccess.ReadWrite, FileShare.None);
+					fileStream = File.Open(Class4.sharedSettingsPath, FileMode.Open, FileAccess.ReadWrite, FileShare.None);
 					break;
 				}
 				catch
@@ -74,18 +74,18 @@ namespace ns0
 			{
 				StreamReader streamReader = new StreamReader(fileStream, new UTF8Encoding());
 				string text = streamReader.ReadToEnd();
-				text = Class4.smethod_7(text);
+				text = Class4.decode7(text);
 				List<string> list = text.Split(new char[]
 				{
 					'\n'
 				}, StringSplitOptions.RemoveEmptyEntries).ToList<string>();
-				string text2 = "Global-" + string_2 + ": ";
+				string paramName = "Global-" + parameter + ": ";
 				int num = -1;
         int num2 = 0;
 
         while (num2 < list.Count)
         {
-          if (list[num2].StartsWith(text2))
+          if (list[num2].StartsWith(paramName))
           {
             goto  Label_00D9;
           }
@@ -98,14 +98,14 @@ namespace ns0
 
         Label_00DD:
 
-				string text3 = text2 + string_3;
+				string paramNameValue = paramName + parameterValue;
 				if (num > -1)
 				{
-					list[num] = text3;
+					list[num] = paramNameValue;
 				}
 				else
 				{
-					list.Add(text3);
+					list.Add(paramNameValue);
 				}
 				fileStream.Seek(0L, SeekOrigin.Begin);
 				StreamWriter streamWriter = new StreamWriter(fileStream, new UTF8Encoding());
@@ -115,7 +115,7 @@ namespace ns0
 					list[j] = list[j].Replace("\r", "");
 					stringBuilder.AppendLine(list[j]);
 				}
-				string value = Class4.smethod_6(stringBuilder.ToString());
+				string value = Class4.EncodeString(stringBuilder.ToString());
 				streamWriter.Write(value);
 				fileStream.SetLength(fileStream.Position);
 				streamWriter.Flush();
@@ -145,7 +145,7 @@ namespace ns0
 			{
 				throw new Exception("Settings must be initialized before usage!");
 			}
-			if (!File.Exists(Class4.string_0))
+			if (!File.Exists(Class4.sharedSettingsPath))
 			{
 				MessageBox.Show("Error: Settings file has been deleted!", "HellBuddy Bot", MessageBoxButtons.OK, MessageBoxIcon.Hand);
 				Process.GetCurrentProcess().Kill();
@@ -156,7 +156,7 @@ namespace ns0
 				fileStream = null;
 				try
 				{
-					fileStream = File.Open(Class4.string_0, FileMode.Open, FileAccess.ReadWrite, FileShare.None);
+					fileStream = File.Open(Class4.sharedSettingsPath, FileMode.Open, FileAccess.ReadWrite, FileShare.None);
 					break;
 				}
 				catch
@@ -168,7 +168,7 @@ namespace ns0
 			{
 				StreamReader streamReader = new StreamReader(fileStream, new UTF8Encoding());
 				string text = streamReader.ReadToEnd();
-				text = Class4.smethod_7(text);
+				text = Class4.decode7(text);
 				List<string> list = text.Split(new char[]
 				{
 					'\n'
@@ -219,7 +219,7 @@ namespace ns0
 			{
 				throw new Exception("Settings must be initialized before usage!");
 			}
-			if (!File.Exists(Class4.string_0))
+			if (!File.Exists(Class4.sharedSettingsPath))
 			{
 				MessageBox.Show("Error: Settings file has been deleted!", "HellBuddy Bot", MessageBoxButtons.OK, MessageBoxIcon.Hand);
 				Process.GetCurrentProcess().Kill();
@@ -230,7 +230,7 @@ namespace ns0
 				fileStream = null;
 				try
 				{
-					fileStream = File.Open(Class4.string_0, FileMode.Open, FileAccess.ReadWrite, FileShare.None);
+					fileStream = File.Open(Class4.sharedSettingsPath, FileMode.Open, FileAccess.ReadWrite, FileShare.None);
 					break;
 				}
 				catch (Exception)
@@ -242,7 +242,7 @@ namespace ns0
 			{
 				StreamReader streamReader = new StreamReader(fileStream, new UTF8Encoding());
 				string text = streamReader.ReadToEnd();
-				text = Class4.smethod_7(text);
+				text = Class4.decode7(text);
 				List<string> list = text.Split(new char[]
 				{
 					'\n'
@@ -272,7 +272,7 @@ namespace ns0
 							list[j] = list[j].Replace("\r", "");
 							stringBuilder.AppendLine(list[j]);
 						}
-						string value = Class4.smethod_6(stringBuilder.ToString());
+						string value = Class4.EncodeString(stringBuilder.ToString());
 						streamWriter.Write(value);
 						streamWriter.Flush();
 						fileStream.Flush();
@@ -303,7 +303,7 @@ namespace ns0
 			{
 				throw new Exception("Settings must be initialized before usage!");
 			}
-			if (!File.Exists(Class4.string_0))
+			if (!File.Exists(Class4.sharedSettingsPath))
 			{
 				MessageBox.Show("Error: Settings file has been deleted!", "HellBuddy Bot", MessageBoxButtons.OK, MessageBoxIcon.Hand);
 				Process.GetCurrentProcess().Kill();
@@ -314,7 +314,7 @@ namespace ns0
 				FileStream fileStream = null;
 				try
 				{
-					fileStream = File.Open(Class4.string_0, FileMode.Open, FileAccess.ReadWrite, FileShare.None);
+					fileStream = File.Open(Class4.sharedSettingsPath, FileMode.Open, FileAccess.ReadWrite, FileShare.None);
 				}
 				catch
 				{
@@ -325,7 +325,7 @@ namespace ns0
 				{
 					StreamReader streamReader = new StreamReader(fileStream, new UTF8Encoding());
 					string text = streamReader.ReadToEnd();
-					text = Class4.smethod_7(text);
+					text = Class4.decode7(text);
 					text = text.Replace('\r', '\n');
 					List<string> list = text.Split(new char[]
 					{
@@ -379,7 +379,7 @@ namespace ns0
 			//return result;
 		}
 		[MethodImpl(MethodImplOptions.Synchronized)]
-		internal static void smethod_5()
+		internal static void SaveSettingsFile2()
 		{
 			if (!Class4.bool_0)
 			{
@@ -391,7 +391,7 @@ namespace ns0
 				fileStream = null;
 				try
 				{
-					fileStream = new FileStream(Class4.string_0, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None);
+					fileStream = new FileStream(Class4.sharedSettingsPath, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None);
 					break;
 				}
 				catch
@@ -401,7 +401,7 @@ namespace ns0
 			}
 			StreamReader streamReader = new StreamReader(fileStream, new UTF8Encoding());
 			string text = streamReader.ReadToEnd();
-			text = Class4.smethod_7(text);
+			text = Class4.decode7(text);
 			List<string> list = text.Split("\n".ToCharArray(), StringSplitOptions.RemoveEmptyEntries).ToList<string>();
 			List<string> list2 = new List<string>(list.Count);
 			for (int i = 0; i < list.Count; i++)
@@ -439,20 +439,20 @@ namespace ns0
 				string value = current.Replace("\r", "");
 				stringBuilder.AppendLine(value);
 			}
-			string value2 = Class4.smethod_6(stringBuilder.ToString());
+			string value2 = Class4.EncodeString(stringBuilder.ToString());
 			streamWriter.Write(value2);
 			streamWriter.Flush();
 			fileStream.Flush();
 			fileStream.SetLength(fileStream.Position);
 			fileStream.Close();
 		}
-		private static string smethod_6(string string_2)
+		private static string EncodeString(string string_2)
 		{
 			byte[] bytes = Encoding.UTF8.GetBytes(string_2);
 			Class4.smethod_8(ref bytes);
 			return Convert.ToBase64String(bytes);
 		}
-		private static string smethod_7(string string_2)
+		private static string decode7(string string_2)
 		{
 			byte[] bytes = Convert.FromBase64String(string_2);
 			Class4.smethod_9(ref bytes);

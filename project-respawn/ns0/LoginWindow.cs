@@ -22,10 +22,10 @@ namespace ns0
 	{
 		private sealed class Class0
 		{
-			public string string_0;
-			public string string_1;
-			public int int_0;
-			public MemoryStream memoryStream_0;
+			public string someFileName;
+			public string checksum;
+			public int capacity;
+			public MemoryStream stream;
 		}
 		[CompilerGenerated]
 		private sealed class Class19
@@ -73,7 +73,7 @@ namespace ns0
 			{
 				LoginWindow.Class13.Class14 @class = new LoginWindow.Class13.Class14();
 				@class.class13_0 = this;
-				this.class0_0.memoryStream_0.Write(byte_0, 0, int_2);
+				this.class0_0.stream.Write(byte_0, 0, int_2);
 				@class.double_0 = (double)int_0 / (double)int_1;
 				@class.double_0 *= 100.0;
 				this.loginWindow_0.statusLabel.Invoke(new Action(@class.method_0));
@@ -110,14 +110,14 @@ namespace ns0
 		private Button BtnExtendLicenceBox;
 		private Thread thread_0;
 		private TcpClient tcpClient_0;
-		private string string_6;
+		private string sessionID;
 		private int int_1;
-		private int int_2;
-		private string string_7 = "";
-		private string string_8 = "";
+		private int portNumber;
+		private string workingDirectoryPath = "";
+		private string stringThatIsObtainedFromServer = "";
 		private int int_3;
 		internal static string[] string_9;
-		internal static string string_10 = Path.Combine(Path.GetTempPath(), "HellBuddy\\");
+		internal static string hbFolderPath = Path.Combine(Path.GetTempPath(), "HellBuddy\\");
 		private List<LoginWindow.Class0> list_0;
         private Label statusLabel;
         private PictureBox pictureBox1;
@@ -131,11 +131,11 @@ namespace ns0
 			int width = TextRenderer.MeasureText("v1.1.0", this.LabelVersion.Font).Width;
 			this.LabelVersion.Location = new Point(this.LabelVersion.Location.X - width, this.LabelVersion.Location.Y);
 			Class4.smethod_0();
-			Class4.smethod_1("LauncherPID", Process.GetCurrentProcess().Id.ToString());
+			Class4.saveSettingFile("LauncherPID", Process.GetCurrentProcess().Id.ToString());
 			Settings.Default.Upgrade();
 			this.LicenceKeyBox.Text = Settings.Default.LastUsedKeys;
 			this.LicenceKeyBox.Focus();
-			Directory.CreateDirectory(LoginWindow.string_10);
+			Directory.CreateDirectory(LoginWindow.hbFolderPath);
       
 		}
 		protected override void Dispose(bool disposing)
@@ -313,7 +313,7 @@ namespace ns0
 				/*if (!this.tcpClient_0.smethod_7("193.192.58.73", 2795, 2000))
 				{
 					this.method_4(false);
-					this.statusLabel.smethod_1("Connection timed out...");
+					this.statusLabel.saveSettingFile("Connection timed out...");
 				}*/
         if (a!=1)
         {
@@ -334,7 +334,7 @@ namespace ns0
 //               new Socket(ipe.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
 
 
-				//	NetworkStream stream = this.tcpClient_0.GetStream();
+					//NetworkStream stream = this.tcpClient_0.GetStream();
          // NetworkStream stream = new NetworkStream(tempSocket);
 
 					//stream.smethod_3("v1.1.0");
@@ -351,7 +351,7 @@ namespace ns0
 					}
 					else
 					{
-						//stream.smethod_5(array.Length);
+						//stream.SaveSettingsFile2(array.Length);
 						for (int i = 0; i < array.Length; i++)
 						{
 							//stream.smethod_3(array[i]);
@@ -392,7 +392,7 @@ namespace ns0
 								if (num3 > 0)
 								{
 									str += "\r\n\r\nTo prevent trying out keys, we ban people for entering wrong keys.\r\n\r\nA ban is 10 seconds for every wrong key\r\n";
-									str += "You entered {0} wrong keys, so thats {1} seconds.".smethod_1(num3, num3 * 10);
+									str += "You entered {0} wrong keys, so thats {1} seconds.".saveSettingFile(num3, num3 * 10);
 								}
 								if (flag)
 								{
@@ -401,16 +401,16 @@ namespace ns0
 								LoginFailedDialog loginFailedDialog = new LoginFailedDialog(str);
 								loginFailedDialog.ShowDialog();
 								this.method_4(false);
-								this.statusLabel.smethod_1("Authentication failed");
+								this.statusLabel.saveSettingFile("Authentication failed");
                 */
 							}
 							else
 							{
-								/*this.string_6 = stream.smethod_2();
-								this.string_8 = stream.smethod_2();
+								/*this.sessionID = stream.smethod_2();
+								this.stringThatIsObtainedFromServer = stream.smethod_2();
 								this.int_3 = stream.smethod_4();
 								this.int_1 = stream.smethod_4();
-								this.int_2 = stream.smethod_4();
+								this.portNumber = stream.smethod_4();
 
                
                 
@@ -425,16 +425,16 @@ namespace ns0
 								this.list_0 = new List<LoginWindow.Class0>();
 								for (int k = 0; k < 1 ; k++)
 								{
-									string string_ = "string1"; //stream.smethod_2();
-									string string_2 = "string2"; //stream.smethod_2();
-									int capacity = 1;//stream.smethod_4();
+                                    string string_ = "string";//stream.smethod_2();   //These strings are probably important
+								    string checksum = "string2";//stream.smethod_2(); //
+									int capacity = 10000000;//stream.smethod_4();
 									LoginWindow.Class0 class2 = new LoginWindow.Class0();
-									class2.string_0 = string_;
-									class2.string_1 = string_2;
-									class2.int_0 = capacity;
-									class2.memoryStream_0 = new MemoryStream(capacity);
+									class2.someFileName = string_;
+									class2.checksum = checksum;
+									class2.capacity = capacity;
+									class2.stream = new MemoryStream(capacity);
 									this.list_0.Add(class2);
-									if (!this.method_6(string_, string_2))
+									if (!this.verifyFileIntegrity(string_, checksum))
 									{
 										list.Add(class2);
 									}
@@ -442,7 +442,7 @@ namespace ns0
 								/*IEnumerable<string> arg_382_0 = Environment.GetCommandLineArgs();
 								if (LoginWindow.func_0 == null)
 								{
-									LoginWindow.func_0 = new Func<string, bool>(LoginWindow.smethod_1);
+									LoginWindow.func_0 = new Func<string, bool>(LoginWindow.saveSettingFile);
 								}
 								bool flag2;
 								if (flag2 = (arg_382_0.FirstOrDefault(LoginWindow.func_0) != null))
@@ -500,23 +500,23 @@ namespace ns0
 				//this.tcpClient_0.Connect("193.192.58.73", this.int_1);
 				this.tcpClient_0.ReceiveTimeout = 12000;
 				NetworkStream stream = this.tcpClient_0.GetStream();
-				stream.smethod_3(this.string_6);
+				stream.smethod_3(this.sessionID);
 				@class.class0_0 = list_1[i];
-				stream.smethod_3(@class.class0_0.string_0);
+				stream.smethod_3(@class.class0_0.someFileName);
 				@class.string_0 = "File: {0}/{1}\n".smethod_1(i + 1, list_1.Count);
-				stream.smethod_1(list_1[i].int_0, new Action<int, int, byte[], int>(@class.method_0), 500);
+				stream.smethod_1(list_1[i].capacity, new Action<int, int, byte[], int>(@class.method_0), 500);
 				Thread.Sleep(100);
 				this.statusLabel.Invoke(new Action(@class.method_1));
-				string path = Path.Combine(LoginWindow.string_10, @class.class0_0.string_0);
+				string path = Path.Combine(LoginWindow.hbFolderPath, @class.class0_0.someFileName);
 				if (File.Exists(path))
 				{
 					File.SetAttributes(path, FileAttributes.Hidden);
 					File.Delete(path);
 				}
-				File.WriteAllBytes(path, this.method_5(@class.class0_0.memoryStream_0.ToArray()));
+				File.WriteAllBytes(path, this.method_5(@class.class0_0.stream.ToArray()));
 				File.SetAttributes(path, FileAttributes.Hidden);
 				string a = Class7.smethod_0(path);
-				if (a != @class.class0_0.string_1)
+				if (a != @class.class0_0.checksum)
 				{
 					MessageBox.Show("Network error! The checksum of the downloaded file is not correct!", "Launcher", MessageBoxButtons.OK, MessageBoxIcon.Hand);
 					File.Delete(path);
@@ -532,8 +532,8 @@ namespace ns0
 			this.tcpClient_0.Close();
 			Settings.Default.LastUsedKeys = this.LicenceKeyBox.Text;
 			Settings.Default.Save();
-			/*int num = 1;
-			IEnumerable<string> enumerable = Directory.EnumerateDirectories(LoginWindow.string_10, "*", SearchOption.TopDirectoryOnly);
+			int num = 1;
+			IEnumerable<string> enumerable = Directory.EnumerateDirectories(LoginWindow.hbFolderPath, "*", SearchOption.TopDirectoryOnly);
 			foreach (string current in enumerable)
 			{
 				try
@@ -549,40 +549,40 @@ namespace ns0
 			}
 			do
 			{
-				this.string_7 = Path.Combine(LoginWindow.string_10, "WorkingDir-" + num);
+				this.workingDirectoryPath = Path.Combine(LoginWindow.hbFolderPath, "WorkingDir-" + num);
 				num++;
 			}
-			while (Directory.Exists(this.string_7));
-			Directory.CreateDirectory(this.string_7);
-			File.SetAttributes(this.string_7, FileAttributes.Hidden | FileAttributes.System | FileAttributes.Directory);
-			Class4.smethod_5();
-			Class4.smethod_1("SessionHost", "193.192.58.73");
-			Class4.smethod_1("SessionPort", this.int_2.ToString());
-			Class4.smethod_1("SessionID", this.string_6);
+			while (Directory.Exists(this.workingDirectoryPath));
+			Directory.CreateDirectory(this.workingDirectoryPath);
+			File.SetAttributes(this.workingDirectoryPath, FileAttributes.Hidden | FileAttributes.System | FileAttributes.Directory);
+			Class4.SaveSettingsFile2();
+			Class4.saveSettingFile("SessionHost", "193.192.58.73");
+			Class4.saveSettingFile("SessionPort", this.portNumber.ToString());
+			Class4.saveSettingFile("SessionID", this.sessionID);
 			foreach (LoginWindow.Class0 current2 in this.list_0)
 			{
-				string sourceFileName = Path.Combine(LoginWindow.string_10, current2.string_0);
-				if (current2.string_0 == "NETLoader.dll")
+				string sourceFileName = Path.Combine(LoginWindow.hbFolderPath, current2.someFileName);
+				if (current2.someFileName == "NETLoader.dll")
 				{
-					byte[] array = File.ReadAllBytes(Path.Combine(LoginWindow.string_10, current2.string_0));
+                    byte[] array = File.ReadAllBytes(Path.Combine(LoginWindow.hbFolderPath, "NETLoader.dll"));
 					this.method_3(array, "SELFSELFSELFSELFSELFSELF.dll", "NETLoader.dll");
 					this.method_3(array, "TARGETTARGETTARGETTARGET.dll", "7889083D.dll");
 					this.method_3(array, "NAMESPACECLASSCLASSCLASSCLASSCLASS", "HellBuddy.ContainerA");
 					this.method_3(array, "MAINMAINMAINMAINMAIN", "EntryPoint");
-					string path = Path.Combine(this.string_7, current2.string_0);
+					string path = Path.Combine(this.workingDirectoryPath, current2.someFileName);
 					File.WriteAllBytes(path, array);
 					File.SetAttributes(path, FileAttributes.Hidden);
 				}
 				else
 				{
-					if (current2.string_0.EndsWith(".txt"))
+					if (current2.someFileName.EndsWith(".txt"))
 					{
-						string text = Path.Combine(LoginWindow.string_10, "Profiles");
+						string text = Path.Combine(LoginWindow.hbFolderPath, "Profiles");
 						if (!Directory.Exists(text))
 						{
 							Directory.CreateDirectory(text);
 						}
-						string text2 = Path.Combine(text, current2.string_0);
+						string text2 = Path.Combine(text, current2.someFileName);
 						if (File.Exists(text2))
 						{
 							File.Delete(text2);
@@ -592,21 +592,23 @@ namespace ns0
 					}
 					else
 					{
-						string text3 = Path.Combine(this.string_7, current2.string_0);
-						if (File.Exists(text3))
+						string filename = Path.Combine(this.workingDirectoryPath, current2.someFileName);
+						if (File.Exists(filename))
 						{
-							File.Delete(text3);
+							File.Delete(filename);
 						}
-						File.Copy(sourceFileName, text3);
-						File.SetAttributes(text3, FileAttributes.Hidden);
+                        if (File.Exists(sourceFileName))
+                        {
+                            File.Copy(sourceFileName, filename);
+                            File.SetAttributes(filename, FileAttributes.Hidden);
+                        }
 					}
 				}
 			}
-       * */
 			base.Hide();
 
 			this.method_4(false);
-			ProfileManager profileManager = new ProfileManager(this.string_7, this.string_8, "NETLoader.dll", this.int_3);
+			ProfileManager profileManager = new ProfileManager(this.workingDirectoryPath, this.stringThatIsObtainedFromServer, "NETLoader.dll", this.int_3);
 			profileManager.ShowDialog(this);
 			Environment.Exit(0);
 		}
@@ -708,20 +710,20 @@ namespace ns0
 			}
 			return result;
 		}
-		private bool method_6(string string_11, string string_12)
+		private bool verifyFileIntegrity(string filename, string checksum)
 		{
-			string_11 = Path.Combine(LoginWindow.string_10, string_11);
-			if (File.Exists(string_11))
+			filename = Path.Combine(LoginWindow.hbFolderPath, filename);
+			if (File.Exists(filename))
 			{
-				string b = Class7.smethod_0(string_11);
-				if (string_12 == b)
+				string b = Class7.smethod_0(filename);
+				if (checksum == b)
 				{
 					return true;
 				}
 			}
 			return false;
 		}
-		private void method_7(object sender, LinkLabelLinkClickedEventArgs e)
+		private void OpenHellbuddyWebSite(object sender, LinkLabelLinkClickedEventArgs e)
 		{
 			Process.Start("http://www.hellbuddy.com");
 		}
@@ -761,11 +763,11 @@ namespace ns0
 		}
 		private void LabelVersion_MouseUp(object sender, MouseEventArgs e)
 		{
-			if (!Directory.Exists(LoginWindow.string_10))
+			if (!Directory.Exists(LoginWindow.hbFolderPath))
 			{
-				Directory.CreateDirectory(LoginWindow.string_10);
+				Directory.CreateDirectory(LoginWindow.hbFolderPath);
 			}
-			string text = Path.Combine(LoginWindow.string_10, "Quests");
+			string text = Path.Combine(LoginWindow.hbFolderPath, "Quests");
 			if (!Directory.Exists(text))
 			{
 				Directory.CreateDirectory(text);

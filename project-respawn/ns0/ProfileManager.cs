@@ -910,7 +910,7 @@ namespace ns0
 		}
 		private void InfoLabel_MouseUp(object sender, MouseEventArgs e)
 		{
-			string string_ = LoginWindow.string_10;
+			string string_ = LoginWindow.hbFolderPath;
 			if (!Directory.Exists(string_))
 			{
 				Directory.CreateDirectory(string_);

@@ -342,7 +342,7 @@ namespace Launcher
 			this.debugger.OnCreateThread += new Action<Native.CreateThreadDebugInfo, uint>(this.dbg_ThreadCreated);
 			this.D3Process = Process.Start(this.D3Executable, "-launch -window " + this.Parameters);
 			Thread.Sleep(600);
-			Class4.smethod_5();
+			Class4.SaveSettingsFile2();
 			if (!this.debugger.Attach(this.D3Process.Id, false))
 			{
 				this.ProfileActive = false;
@@ -373,7 +373,7 @@ namespace Launcher
 				{
 				}
 			});
-			Class4.smethod_5();
+			Class4.SaveSettingsFile2();
 			this.readyToInject = new AutoResetEvent(false);
 			new Thread((ThreadStart)delegate
 			{
