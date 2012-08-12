@@ -270,6 +270,7 @@ namespace ns0
             this.Controls.Add(this.LabelVersion);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.submitBtn);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoginWindow";
